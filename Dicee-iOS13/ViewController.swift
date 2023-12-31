@@ -14,27 +14,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView2: UIImageView!
     
     var diceList = ["DiceOne", "DiceTwo", "DiceThree", "DiceFour", "DiceFive", "DiceSix"]
-    var leftDiceNumber = 0
-    var rightDiceNumber = 5
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-
-    }
     
     @IBAction func rollButtonPressed(_ sender: UIButton) {
         
-        if (leftDiceNumber > 5) {
-            return
-        }
-        
-        
-        diceImageView1.image = UIImage(named: diceList[leftDiceNumber])
-        diceImageView2.image = UIImage(named: diceList[rightDiceNumber])
-        
-        leftDiceNumber += 1
-        rightDiceNumber -= 1
+        diceImageView1.image = UIImage(named: diceList[Int.random(in: 0...5)])
+        diceImageView2.image = UIImage(named: diceList[Int.random(in: 0...5)])
+
     }
     
 }
